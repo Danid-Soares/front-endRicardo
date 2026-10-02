@@ -1,0 +1,33 @@
+body{
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#maze {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background: black;
+}
+
+.path{
+    position: absolute;
+    background: gold;
+}
+
+.player {
+    width: 20px;
+    height: 20px;
+    background: red;
+    position: absolute;
+    top: 350px;
+    left: 10px;
+    border-radius: 5px;
+}
+
+.exit{
+    background-color: green;
+}
