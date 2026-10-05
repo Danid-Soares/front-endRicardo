@@ -58,8 +58,8 @@
                 como trabalho em equipe, comunicação, organização e apoio técnico.<br>
             </p>
 
-            <h1>COMPETÊNCIAS</h1>
-
+            <h1 class = "secao">COMPETÊNCIAS</h1>
+            <div class = "conteudo">
             <ul>
                 <li>Conhecimento básico em HTML, CSS e JavaScript, Python e C</li>
                 <li>Noções de lógica de programação</li>
@@ -68,8 +68,10 @@
                 <li>Uso básico do GitHub para hospedagem e versionamento de projetos</li>
                 <li>Facilidade para aprender novas tecnologias</li>
             </ul>
+            </div>
 
-            <h1>FORMAÇÃO</h1>
+            <h1 class = "secao">FORMAÇÃO</h1>
+            <div class = "conteudo">
 
             <p>
                 <strong>Colégio Estadual Pedro Macedo — Ensino Médio Técnico em Desenvolvimento de Sistemas</strong><br>
@@ -88,9 +90,10 @@
                 Fev de 2026 – Dez de 2029 (previsão) | Curitiba, PR<br>
                 Curso superior com foco em análise e desenvolvimento de sistemas, banco de dados e engenharia de software.
             </p>
+            </div>
 
-            <h1>EXPERIÊNCIA PROFISSIONAL</h1>
-
+            <h1 class = "secao">EXPERIÊNCIA PROFISSIONAL</h1>
+            <div class = "conteudo">
             <p>
                 <strong>Casa da Mulher Brasileira — Estagiário de Apoio Técnico</strong><br>
                 Julho de 2025 – Dezembro de 2025 | Curitiba, PR<br>
@@ -132,7 +135,7 @@ const intervalo = setInterval(() => {
 
         setTimeout(() => {
             overlay.classList.remove("flash");
-            contador.innerText = "ACESSO LIBERADO 😎";
+            contador.innerText = "ACESSO LIBERADO";
 
             setTimeout(() => {
                 overlay.style.display = "none";
@@ -143,6 +146,17 @@ const intervalo = setInterval(() => {
     }
 
 }, 1000);
+
+document.querySelectorAll(".secao").forEach(secao => {
+    secao.addEventListener("click", () => {
+
+        const conteudo = secao.nextElementSibling;
+
+        secao.classList.toggle("ativo");
+        conteudo.classList.toggle("ativo");
+
+    });
+});
 </script>
 </body>
 </html>
