@@ -1,0 +1,96 @@
+body {
+    background: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* OVERLAY */
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white; /* 🔥 faltava isso */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    z-index: 999;
+}
+
+/* FLASH */
+.flash {
+    background: white;
+    color: black;
+    transition: 0.1s; /* deixa mais suave */
+}
+
+/* CURRÍCULO */
+#curriculo {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px; /* pequeno respiro */
+}
+
+/* TÍTULO */
+#titulo {
+    text-align: center;
+}
+
+/* TEXTO */
+p {
+    line-height: 1.6; /* melhor leitura */
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#curriculo * {
+    animation: aparecer 0.5s ease-out both;
+}
+
+/* TREMER */
+.shake {
+    animation: shake 0.2s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(2px, 0); }
+    25% { transform: translate(-2px, 0); }
+    50% { transform: translate(2px, 0); }
+    75% { transform: translate(-2px, 0); }
+    100% { transform: translate(2px, 0); }
+}
+
+#mensagem {
+    text-shadow: 
+        0 0 5px white,
+        0 0 10px white,
+        0 0 20px rgba(255,255,255,0.6);
+    animation: pulse 0.6s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+#mensagem {
+    letter-spacing: 3px;
+}
