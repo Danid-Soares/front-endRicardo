@@ -1,96 +1,78 @@
+:root {
+    --cor-texto: #eaffc2;      /* estava faltando: sem ela o texto ficava preto no fundo preto */
+    --cor-principal: #adff2f;
+    --cor-secundaria: #9acd32;
+    --cor-fraca: #6b8e23;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: #f5f5f5;
-    color: #111;
+    background: black;
+    color: var(--cor-texto);
     font-family: Arial, sans-serif;
     margin: 0;
 }
 
-/* OVERLAY */
+/* OVERLAY (tela do terminal) */
 #overlay {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: black;
-    color: white;
+    color: var(--cor-principal);
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 60px;
+    justify-content: center;
+    font-family: monospace;
     z-index: 999;
 }
 
-/* FLASH */
-.flash {
-    background: white;
-    color: black;
-    transition: 0.15s;
+#terminal {
+    font-size: 18px;
+    white-space: pre-wrap;
+    width: 80%;
+    max-width: 800px;
 }
 
-/* CURRÍCULO (AGORA COM VISUAL DE CARD) */
+/* cursor piscando */
+#terminal::after {
+    content: "_";
+    animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* CURRÍCULO (CARD DARK) */
 #curriculo {
     max-width: 800px;
     margin: 60px auto;
     padding: 30px;
-    background: white;
+    background: #0d0d0d;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-top: 5px solid black;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+    border-top: 4px solid gold;
 }
 
-/* TÍTULO */
-#titulo {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 5px;
-}
-
-/* SUBTEXTO (se quiser usar depois) */
-.sub {
-    text-align: center;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-/* SEÇÕES */
-h1 {
-    margin-top: 30px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 5px;
-    font-size: 20px;
-}
-
-/* TEXTO */
-p {
-    line-height: 1.7;
+#curriculo::before {
+    content: "system_access.log";
+    font-size: 12px;
+    color: #555;
+    display: block;
     margin-bottom: 10px;
+    font-family: monospace;
 }
 
-/* LISTA */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    background: #f1f1f1;
-    padding: 8px;
-    border-radius: 6px;
-    margin-bottom: 6px;
-    transition: 0.2s;
-    border-left: 3px solid transparent;
-}
-
-li:hover {
-    background: #e5e5e5;
-    transform: translateX(5px);
-    border-left: 3px solid black;
-}
-
-/* ANIMAÇÃO DE ENTRADA */
+/* animação de entrada (agora ela é realmente usada) */
 @keyframes aparecer {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -98,75 +80,130 @@ li:hover {
     }
 }
 
-#curriculo * {
-    animation: aparecer 0.5s ease-out both;
+#curriculo.entrada {
+    animation: aparecer 0.8s ease-out both;
 }
 
-/* TREMER */
-.shake {
-    animation: shake 0.2s infinite;
+/* TÍTULO */
+#titulo {
+    text-align: center;
+    font-size: 28px;
+    margin: 0 0 5px;
+    color: var(--cor-principal);
 }
 
-@keyframes shake {
-    0% { transform: translate(2px, 0); }
-    25% { transform: translate(-2px, 0); }
-    50% { transform: translate(2px, 0); }
-    75% { transform: translate(-2px, 0); }
-    100% { transform: translate(2px, 0); }
+.nome {
+    text-align: center;
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: var(--cor-texto);
 }
 
-/* CONTAGEM */
-#mensagem {
-    text-shadow: 
-        0 0 5px white,
-        0 0 10px white,
-        0 0 20px rgba(255,255,255,0.6);
-    animation: pulse 0.6s infinite alternate;
-    letter-spacing: 3px;
+.contato {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--cor-fraca);
 }
 
-@keyframes pulse {
-    from {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-    to {
-        transform: scale(1.15);
-        opacity: 1;
-    }
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    margin: 20px 0;
 }
 
-.conteudo {
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    overflow: hidden;
-    transition: 
-        max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.3s ease,
-        transform 0.3s ease;
+/* TEXTO */
+p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+    color: var(--cor-secundaria);
 }
 
-.conteudo.ativo {
-    max-height: 1000px;
-    opacity: 1;
-    transform: translateY(0);
+small, .detalhe {
+    color: var(--cor-fraca);
 }
 
+a {
+    color: var(--cor-principal);
+}
+
+a:hover {
+    text-shadow: 0 0 6px gold;
+}
+
+/* SEÇÃO INTERATIVA (título clicável) */
 .secao {
+    margin: 20px 0 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    font-size: 20px;
+    color: var(--cor-principal);
     cursor: pointer;
-    transition: 0.2s;
+    user-select: none;
+    transition: color 0.2s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    letter-spacing: 1px;
+}
+
+.secao:hover,
+.secao:focus-visible {
+    color: var(--cor-texto);
+    text-shadow: 0 0 5px gold;
+    outline: none;
 }
 
 .secao::after {
     content: "▼";
     font-size: 12px;
     transition: transform 0.3s ease;
+    color: gold;
 }
 
 .secao.ativo::after {
     transform: rotate(180deg);
+}
+
+/* CONTEÚDO INTERATIVO (a altura é controlada pelo JavaScript) */
+.conteudo {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-15px);
+    overflow: hidden;
+    color: var(--cor-secundaria);
+    line-height: 1.7;
+    transition:
+        max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.conteudo.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.conteudo .linha {
+    padding: 2px 0;
+}
+
+.conteudo .espaco {
+    height: 14px;
+}
+
+/* respeita quem desativa animações */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* celular */
+@media (max-width: 600px) {
+    #curriculo {
+        margin: 20px 12px;
+        padding: 20px 16px;
+    }
 }
