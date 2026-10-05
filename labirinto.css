@@ -1,11 +1,24 @@
-body{
+body {
     background: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
     height: 100vh;
 }
 
+/* Container geral (título + labirinto) */
+.container {
+    text-align: center;
+}
+
+/* Título */
+h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Área do labirinto */
 #maze {
     position: relative;
     width: 600px;
@@ -13,12 +26,15 @@ body{
     background: black;
 }
 
-.path{
+/* Caminhos */
+.path {
     position: absolute;
     background: gold;
+    z-index: 1;
 }
 
-.player {
+/* Player */
+#player {
     width: 20px;
     height: 20px;
     background: red;
@@ -26,8 +42,27 @@ body{
     top: 350px;
     left: 10px;
     border-radius: 5px;
+    transition: 0.05s;
+    z-index: 10;
 }
 
-.exit{
-    background-color: green;
+/* Saída */
+.exit {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: lime;
+    box-shadow: 0 0 10px lime, 0 0 20px lime;
+    border-radius: 5px;
+    z-index: 5;
+    animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 5px lime;
+    }
+    to {
+        box-shadow: 0 0 20px lime, 0 0 30px lime;
+    }
 }
