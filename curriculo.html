@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="pt-BR">
     <head>
-        <meta cherset="UTF-8">
-        <title>Meu Currrículo</title>
-        <link rel="stylesheet" href="style.css">
-    </head>   
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meu Currículo</title>
+        <link rel="stylesheet" href="curriculo.css">
+    </head>
     <body>
-        <div>
-            <h1 id = "titulo">Meu Currrículo</h1>
 
-            
-            <hr noshade>
+        <div id = "overlay">
+            <h1 id = "mensagem">Carregando...</h1>
+        </div>
+
+        <div id = "curriculo" style = "display: none;">
+            <h1 id="titulo">Meu Currículo</h1>
+
+            <hr>
 
             <p>
                Rua Getúlio Vargas, 343 - Ap.402<br>
                Colombo, Paraná, 83405-100<br>
                +55 41 99856-6390<br>
-               danilodepetrissoares@gmail.com<br>
-            </p> 
-            
-            <p>
-                <h1>Danilo Depetris Soares</h1>
+               danilodepetrissoares@gmail.com
             </p>
+
+            <h2>Danilo Depetris Soares</h2>
 
             <p>
                 Meu nome é Danilo Depetris Soares, tenho 18 anos e concluí o Ensino Médio Técnico em<br>
@@ -32,7 +34,6 @@
             </p>
 
             <p>
-                Tenho vivência em ambientes administrativos e de suporte técnico, o que me proporcionou<br>
                 Tenho vivência em ambientes administrativos e de suporte técnico, o que me proporcionou<br>
                 contato com organização de documentos, uso de sistemas e rotinas operacionais. Atualmente,<br>
                 atuo como jovem aprendiz no escritório Ferrareze e Freitas Advogados, auxiliando em<br>
@@ -57,43 +58,91 @@
                 como trabalho em equipe, comunicação, organização e apoio técnico.<br>
             </p>
 
-            
             <h1>COMPETÊNCIAS</h1>
-            
+
             <ul>
                 <li>Conhecimento básico em HTML, CSS e JavaScript, Python e C</li>
-                <li>Noções de lógica de programação</li>    
+                <li>Noções de lógica de programação</li>
                 <li>Planilhas no Google Sheets, Excel e LibreOffice Calc</li>
-                <li>Conhecimento básico de Git (controle de versões)</li>    
-                <li>Uso básico do GitHub para hospedagem e versionamento de projetos</li>    
-                <li>Facilidade para aprender novas tecnologias</li>    
+                <li>Conhecimento básico de Git (controle de versões)</li>
+                <li>Uso básico do GitHub para hospedagem e versionamento de projetos</li>
+                <li>Facilidade para aprender novas tecnologias</li>
             </ul>
 
             <h1>FORMAÇÃO</h1>
 
             <p>
-            Colégio Estadual Pedro Macedo — Ensino Médio Técnico em Desenvolvimento de Sistemas<br>
+                <strong>Colégio Estadual Pedro Macedo — Ensino Médio Técnico em Desenvolvimento de Sistemas</strong><br>
                 Fev de 2023 – Dez de 2023 | Curitiba, PR<br>
-                Curso técnico com foco em lógica de programação, desenvolvimento web, banco de dados e metodologias ágeis.<br>
-            Colégio Estadual do Paraná — Ensino Médio Técnico em Desenvolvimento de Sistemas<br> 
-                Fev de 2024 – Dez de 2025 | Curitiba, PR<br> 
-                Curso técnico com foco em lógica de programação, desenvolvimento web, banco de dados e metodologias ágeis.<br>
-            Faculdade de Ensino Superior do Paraná — Bacharelado em Sistemas de Informação<br>   
-                Fev de 2024 – Dez de 2025 (previsão) | Curitiba, PR<br>
-                Curso técnico com foco em lógica de programação, desenvolvimento web, banco de dados e metodologias ágeis.<br>
+                Curso técnico com foco em lógica de programação, desenvolvimento web, banco de dados e metodologias ágeis.
+            </p>
+
+            <p>
+                <strong>Colégio Estadual do Paraná — Ensino Médio Técnico em Desenvolvimento de Sistemas</strong><br>
+                Fev de 2024 – Dez de 2025 | Curitiba, PR<br>
+                Curso técnico com foco em lógica de programação, desenvolvimento web, banco de dados e metodologias ágeis.
+            </p>
+
+            <p>
+                <strong>Faculdade de Ensino Superior do Paraná — Bacharelado em Sistemas de Informação</strong><br>
+                Fev de 2026 – Dez de 2029 (previsão) | Curitiba, PR<br>
+                Curso superior com foco em análise e desenvolvimento de sistemas, banco de dados e engenharia de software.
             </p>
 
             <h1>EXPERIÊNCIA PROFISSIONAL</h1>
 
-            Casa da Mulher Brasileira — Estagiário de Apoio Técnico<br>  
+            <p>
+                <strong>Casa da Mulher Brasileira — Estagiário de Apoio Técnico</strong><br>
                 Julho de 2025 – Dezembro de 2025 | Curitiba, PR<br>
-                Apoio técnico e administrativo, colaboração em equipe e desenvolvimento de habilidades de comunicação e responsabilidade profissional.<br>
-            Ferrareze e Freitas Advogados — Auxiliar Administrativo<br>  
+                Apoio técnico e administrativo, colaboração em equipe e desenvolvimento de habilidades de comunicação e responsabilidade profissional.
+            </p>
+
+            <p>
+                <strong>Ferrareze e Freitas Advogados — Auxiliar Administrativo</strong><br>
                 Fevereiro de 2026 – Atualmente | Curitiba, PR<br>
-                Atuação em rotinas administrativas, organização de documentos e utilização de sistemas internos de gestão jurídica.<br>
+                Atuação em rotinas administrativas, organização de documentos e utilização de sistemas internos de gestão jurídica.
+            </p>
 
-            <a href="https://www.linkedin.com/in/danilodepetrissoares/?isSelfProfile=true">Clique aqui para acessar o meu linkedin</a>
-
+            <p>
+                <a href="https://www.linkedin.com/in/danilodepetrissoares/?isSelfProfile=true" target="_blank" rel="noopener">Clique aqui para acessar o meu LinkedIn</a>
+            </p>
         </div>
-    </body>
-</htm
+
+<script>
+const contador = document.getElementById("mensagem");
+const overlay = document.getElementById("overlay");
+
+let tempo = 3;
+
+const intervalo = setInterval(() => {
+    contador.innerText = tempo;
+
+    if (tempo === 1) {
+        contador.classList.add("shake");
+    }
+
+    tempo--;
+
+    if (tempo < 0) {
+        clearInterval(intervalo);
+
+        contador.classList.remove("shake");
+
+        overlay.classList.add("flash");
+
+        setTimeout(() => {
+            overlay.classList.remove("flash");
+            contador.innerText = "ACESSO LIBERADO 😎";
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+                document.getElementById("curriculo").style.display = "block";
+            }, 1200);
+
+        }, 150);
+    }
+
+}, 1000);
+</script>
+</body>
+</html>
