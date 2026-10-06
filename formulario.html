@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class = "container">
+
+    <h1>FORMULARIO DE INSCRIÇÃO</h1>
+
+    <div class = "secao">
+        <label  for="email">E-mail</label>
+        <input type="email" id =  "email" name = "email"  placeholder="Digite seu Email" required>        
+    </div>
+
+    <div class = "secao">
+        <label for = "password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="Digite sua Senha" required>
+    </div>
+
+    <div class = "secao">
+        <label for = "telefone">Telefone</label>
+        <input type="text" id="text" name="text" placeholder="Digite o seu Numero" required>
+    </div>
+
+    <div class = "secao">
+        <label for = "data">Data de Nascimento</label>
+        <input type = "data" id = "nascimento" name="data_nascimento" required>
+    </div>
+
+    <h1>Informações Acadêmicas</h1>
+
+    <div class = "secao">
+        <label for = "cursos"> Escolha o seu curso:</label>
+        <select name = "curso_escolhido" id = "cursos" required>
+            <option value = "" disabled selected>Selecione um curso...</option>
+            <option value = "Analise e Desenvolvimento de Sistemas">Analise e Desenvolvimento de Sistemas</option>
+            <option value = "Bacharelado em Sistema de Informacao">Bacharelado em Sistema de Informacao</option>
+            <option value = "Engenharia de Software">Engenharia de Software</option>
+            <option value = "Ciencia da Computacao">Ciencia da Computacao</option>
+        </select>   
+    </div>
+
+    <div class = "secao">
+        <label for = "cursos"> Escolha o seu Periodo</label>
+        <select name = "curso_escolhido" id = "cursos" required>
+            <option value = "" disabled selected>Selecione o Periodo...</option>
+            <option value = "1° Periodo">1° Periodo</option>
+            <option value = "2° Periodo">2° Periodo</option>
+            <option value = "3° Periodo">3° Periodo</option>
+            <option value = "4° Periodo">4° Periodo</option>
+            <option value = "5° Periodo">5° Periodo</option>
+            <option value = "6° Periodo">6° Periodo</option>
+            <option value = "7° Periodo">7° Periodo</option>
+            <option value = "8° Periodo">8° Periodo</option>
+        </select>   
+    </div>
+
+    <div class = "secao">
+        <label for = "cursos"> Escolha o seu Turno</label>
+        <select name = "curso_escolhido" id = "cursos" required>
+            <option value = "" disabled selected>Selecione o Turno...</option>
+            <option value = "Manha">Manha</option>
+            <option value = "Tarde">Tarde</option>
+            <option value = "Noite">Noite</option>
+            <option value = "Integral">Integral</option>
+        </select>   
+    </div>
+
+    <div class = "secao">
+        <label for = "Instituicao">Instituicao de Ensino</label>
+        <input type="text" id="text" name="text" placeholder="Digite a instituicao de ensino" required>
+    </div>
+
+    <h1>Participação no evento</h1>
+
+    <div class = "secao">
+        <form>
+            <p>Digite o Turno de Preferencia</p>
+  
+        <label>
+            <input type="radio" name="periodo" value="manha"> Manha
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="periodo" value="tarde"> Tarde
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="periodo" value="noite"> Noite
+        </label>
+        </form>
+    </div>
+
+    <div>
+        <input type="checkbox" id="inscricao" name="newsletter" value="sim">
+        <label for="inscricao">Quero receber novidades por e-mail</label>
+    </div>
+
+</div>
+
+</body>
+</html>
